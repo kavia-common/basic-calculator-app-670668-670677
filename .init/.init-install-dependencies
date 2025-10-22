@@ -1,0 +1,4 @@
+{
+    "command": "npm install",
+    "working_directory": "/tmp/kavia/workspace/code-generation/basic-calculator-app-670668-670677/calculator_frontend"
+}
