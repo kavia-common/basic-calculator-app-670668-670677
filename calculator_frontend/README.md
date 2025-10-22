@@ -1,82 +1,36 @@
-# Lightweight React Template for KAVIA
+# Ocean Professional Calculator (React)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern, minimalist calculator built with React (functional components + hooks). Styled with an Ocean Professional theme using pure CSS.
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Basic operations: add (+), subtract (-), multiply (×), divide (÷)
+- Chained operations (e.g., 2 + 3 × 4 = 14)
+- Right-aligned display, large digits
+- Keyboard support:
+  - Digits (0-9), Decimal (.), Operators (+ - * /)
+  - Enter or = to evaluate
+  - Backspace to delete last digit
+  - Escape to clear
+- Division-by-zero safety (shows "Error" and resets on next input)
+- Accessible buttons (aria-pressed on active operator, roles, titles)
+- Ocean Professional theme (rounded card, shadows, subtle transitions)
 
-## Getting Started
+## Scripts
 
-In the project directory, you can run:
+- `npm start` — run dev server on port 3000 (or next available)
+- `npm test` — run tests
+- `npm run build` — production build
 
-### `npm start`
+## Structure
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `src/components/Calculator.jsx` — UI + logic
+- `src/components/KeyButton.jsx` — accessible, reusable button
+- `src/App.js` — app entry rendering the calculator
+- `src/styles.css` — app styles (Ocean Professional)
 
-### `npm test`
+## Notes
 
-Launches the test runner in interactive watch mode.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- No external services required. Minimal state is kept in the `Calculator` component:
+  - `currentValue`, `previousValue`, `operator`, `overwrite`, `error`
+- All configuration is local; no environment variables needed.
